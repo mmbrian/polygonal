@@ -35,15 +35,15 @@ function setup() {
 	//// Initializations
 	frameRate(fps);
 	createCanvas(windowWidth, windowHeight);
-	init();
+	window.initVisualization();
 }
 
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
-	init();
+	window.initVisualization();
 }
 
-function init() {
+window.initVisualization = function() {
 	hw = width / 2.;
 	hh = height / 2.;
 	wc = createVector(hw, hh);
@@ -119,7 +119,7 @@ function keyPressed() {
 }
 
 function draw() {
-	if (!window.displayVisualization) return;
+	if (!window.allowVisualization) return;
 
 	fill(0, 255);
 	rect(0, 0, width, height);
