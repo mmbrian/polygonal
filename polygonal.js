@@ -1,8 +1,8 @@
-// Inspired by an old window screen saver
+// Inspired by ... well it just came to my mind
 // Mohsen Mansouryar
-// probintech.com/en/mohsen/stars
+// probintech.com/en/mohsen/polygonal
 
-// Stars
+// Polygonal
 
 //// Main Part ///////////////////////////////////
 
@@ -11,7 +11,7 @@ var hw, hh;
 var wc;
 
 var fps = 60;
-var npoly = 20;
+var npoly = 25;
 var polygons;
 var all_polygons;
 var ncpoly = 13;
@@ -83,35 +83,41 @@ function mouseDragged() {
 }
 
 function keyPressed() {
-	// switch (keyCode) {
-	// 	case SHIFT: // backspace key
-	// 		reversed = !reversed;
-	// 		break;
-	// 	case ENTER: // enter key
-	// 		inverted = !inverted;
-	// 		break;
-	// 	case UP_ARROW: // Up
-	// 		wa += 0.01;
-	// 		wa = constrain(wa, min_wa, max_wa);
-	// 		break;
-	// 	case DOWN_ARROW: // Down
-	// 		wa -= 0.01;
-	// 		wa = constrain(wa, min_wa, max_wa);
-	// 		break;
-	// 	case LEFT_ARROW:
-	// 		wc.x -= 3;
-	// 		wc.x = constrain(wc.x, 0, width);
-	// 		break;
-	// 	case RIGHT_ARROW:
-	// 		wc.x += 3;
-	// 		wc.x = constrain(wc.x, 0, width);
-	// 		break;
-	// 	default:
-	// 		break;
-	// }
+	switch (keyCode) {
+		// case SHIFT: // backspace key
+		// 	reversed = !reversed;
+		// 	break;
+		case ENTER: // enter key
+			saveCanvas('polygonal_canvas_scr', 'png');
+			// saveFrames('polygonal','jpg',15,22,null); // 15 and 22 are max values 15 sec, 22fps
+			// print('done');
+
+			// inverted = !inverted;
+			break;
+		// case UP_ARROW: // Up
+		// 	wa += 0.01;
+		// 	wa = constrain(wa, min_wa, max_wa);
+		// 	break;
+		// case DOWN_ARROW: // Down
+		// 	wa -= 0.01;
+		// 	wa = constrain(wa, min_wa, max_wa);
+		// 	break;
+		// case LEFT_ARROW:
+		// 	wc.x -= 3;
+		// 	wc.x = constrain(wc.x, 0, width);
+		// 	break;
+		// case RIGHT_ARROW:
+		// 	wc.x += 3;
+		// 	wc.x = constrain(wc.x, 0, width);
+		// 	break;
+		default:
+			break;
+	}
 }
 
 function draw() {
+	if (!window.displayVisualization) return;
+
 	fill(0, 255);
 	rect(0, 0, width, height);
 
