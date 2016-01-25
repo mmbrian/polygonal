@@ -17,6 +17,8 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300' rel='stylesheet' type='text/css'>
 
+	<script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/3.0.0/screenfull.min.js"></script>
+
 	<script language="javascript" type="text/javascript" src="polygonal.js"></script>
 	<!-- <script language="javascript" type="text/javascript" src="{% static "js/mohsen/polygonal.js" %}"></script> -->
 
@@ -272,6 +274,7 @@
 				console.log("Fine");
 				$("h3.bandcamp_ready").click(function() {
 					console.log("Displaying Animation");
+					if (screenfull.enabled) {screenfull.request();}
 					window.displayVisualization = true;
 					kill_wave = true;
 				});

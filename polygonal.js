@@ -32,11 +32,18 @@ var alpha_dirs;
 
 function setup() {
 	document.assetsLoaded = true;
-
 	//// Initializations
 	frameRate(fps);
 	createCanvas(windowWidth, windowHeight);
+	init();
+}
 
+function windowResized() {
+	resizeCanvas(windowWidth, windowHeight);
+	init();
+}
+
+function init() {
 	hw = width / 2.;
 	hh = height / 2.;
 	wc = createVector(hw, hh);
@@ -72,10 +79,6 @@ function setup() {
 	// 		all_polygons[j][i] = polygon(45 * (i+1), 4 + j);
 	// 	}
 	// }
-}
-
-function windowResized() {
-	resizeCanvas(windowWidth, windowHeight);
 }
 
 function mouseDragged() {
